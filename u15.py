@@ -2,7 +2,7 @@
 from gwfvis import core as gwfvis_core, default as gwfvis_default
 
 # %% config
-vis_config = gwfvis_default.create_recommended_config()
+vis_config = gwfvis_default.create_config()
 gwfvis_core.set_view(vis_config, center=[51, -115], zoom=5)
 
 # %% setup data provider
@@ -20,7 +20,8 @@ gwfvis_core.set_plugin_props(
     {
         'displayName': 'U15',
         'layerType': 'overlay',
-        'active': True
+        'active': True,
+        'pointMode': 'pushpin'
     }
 )
 # %% add data control
@@ -33,7 +34,7 @@ data_control = gwfvis_core.add_plugin(
 
 # %% add metadata
 metadata = gwfvis_core.add_plugin(
-    config=vis_config, name='gwf-default.metadata', container='sidebar', container_props={'slot': 'top'})
+    config=vis_config, name=gwfvis_default.PluginNames.METADATA, container='sidebar', container_props={'slot': 'top'})
 
 # %% option1: print the config JSON
 print(vis_config)

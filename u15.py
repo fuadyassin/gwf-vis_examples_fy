@@ -7,14 +7,14 @@ gwfvis_core.set_view(vis_config, center=[51, -115], zoom=5)
 
 # %% setup data provider
 data_provider_plugin = gwfvis_core.add_plugin(
-    vis_config, name='gwf-default.sqlite-local-data-provider')
+    vis_config, name=gwfvis_default.PluginNames.SQLITE_LOCAL_DATA_PROVIDER)
 data_provider_plugin = gwfvis_core.add_plugin(
-    vis_config, name='gwf-default.gwfvisdb-data-provider')
+    vis_config, name=gwfvis_default.PluginNames.GWFVISDB_DATA_PROVIDER)
 
 # %% add U15 layer
 data_source = 'gwfvisdb:https://gwf-vis.usask.ca/v1/api/file/fetch/public/datasets/u15.gwfvisdb'
 u15_layer = gwfvis_core.add_plugin(
-    config=vis_config, name='gwf-default.geojson-layer')
+    config=vis_config, name=gwfvis_default.PluginNames.GEOJSON_LAYER)
 gwfvis_core.set_plugin_props(
     u15_layer,
     {
@@ -26,7 +26,7 @@ gwfvis_core.set_plugin_props(
 )
 # %% add data control
 data_control = gwfvis_core.add_plugin(
-    config=vis_config, name='gwf-default.data-control', container='main', props={
+    config=vis_config, name=gwfvis_default.PluginNames.DATA_CONTROL, container='main', props={
         'dataSources': ['gwfvisdb:https://gwf-vis.usask.ca/v1/api/file/fetch/public/datasets/u15.gwfvisdb'],
         'dataSourceDict': {'U15': 'gwfvisdb:https://gwf-vis.usask.ca/v1/api/file/fetch/public/datasets/u15.gwfvisdb'}
     }

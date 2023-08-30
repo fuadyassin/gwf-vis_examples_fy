@@ -1,6 +1,7 @@
 # %% import
 import vga
 import gwfvis
+import json
 
 # %% config
 vis_config = gwfvis.create_config()
@@ -38,7 +39,7 @@ metadata = vga.add_plugin(
     config=vis_config, name=gwfvis.PluginNames.METADATA, container='sidebar', container_props={'slot': 'top'})
 
 # %% option1: print the config JSON
-print(vis_config)
+print(json.dumps(vis_config))
 
 # %% option2: print the URL
 print(vga.generate_vis_url(vis_config))

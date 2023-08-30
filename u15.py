@@ -29,8 +29,8 @@ vga.set_plugin_props(
 # %% add data control
 data_control = vga.add_plugin(
     config=vis_config, name=gwfvis.PluginNames.DATA_CONTROL, container='main', props={
-        'dataSources': ['gwfvisdb:https://gwf-vis.usask.ca/v1/api/file/fetch/public/datasets/u15.gwfvisdb'],
-        'dataSourceDict': {'U15': 'gwfvisdb:https://gwf-vis.usask.ca/v1/api/file/fetch/public/datasets/u15.gwfvisdb'}
+        'dataSources': [data_source],
+        'dataSourceDict': {'U15': data_source}
     }
 )
 

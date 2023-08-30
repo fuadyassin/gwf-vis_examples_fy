@@ -5,7 +5,7 @@ import json
 
 # %% config
 vis_config = gwfvis.create_config()
-vga.set_view(vis_config, center=[51.312588, -116.021118], zoom=2)
+vga.set_view(vis_config, center=[0, 0], zoom=2)
 
 # %% setup data provider
 data_provider_plugin = vga.add_plugin(

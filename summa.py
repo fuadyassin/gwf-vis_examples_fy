@@ -13,7 +13,7 @@ data_provider_plugin = vga.add_plugin(
 data_provider_plugin = vga.add_plugin(
     vis_config, name=gwfvis.PluginNames.GWFVISDB_DATA_PROVIDER)
 
-# %% add U15 layer
+# %% add SUMMA layer
 data_source = 'gwfvisdb:https://gwf-vis.usask.ca/v1/api/file/fetch/public/datasets/catchment.gwfvisdb'
 u15_layer = vga.add_plugin(
     config=vis_config, name=gwfvis.PluginNames.GEOJSON_LAYER)

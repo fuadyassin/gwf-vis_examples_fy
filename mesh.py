@@ -15,10 +15,10 @@ data_provider_plugin = vga.add_plugin(
 
 # %% add MESH layer
 data_source = 'gwfvisdb:https://gwf-vis.usask.ca/v1/api/file/fetch/public/datasets/mesh.new.gwfvisdb'
-u15_layer = vga.add_plugin(
+mesh_layer = vga.add_plugin(
     config=vis_config, name=gwfvis.PluginNames.GEOJSON_LAYER)
 vga.set_plugin_props(
-    u15_layer,
+    mesh_layer,
     {
         'displayName': 'MESH',
         'layerType': 'overlay',

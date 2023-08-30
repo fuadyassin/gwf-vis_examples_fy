@@ -15,10 +15,10 @@ data_provider_plugin = vga.add_plugin(
 
 # %% add SUMMA layer
 data_source = 'gwfvisdb:https://gwf-vis.usask.ca/v1/api/file/fetch/public/datasets/catchment.gwfvisdb'
-u15_layer = vga.add_plugin(
+summa_layer = vga.add_plugin(
     config=vis_config, name=gwfvis.PluginNames.GEOJSON_LAYER)
 vga.set_plugin_props(
-    u15_layer,
+    summa_layer,
     {
         'displayName': 'SUMMA',
         'layerType': 'overlay',

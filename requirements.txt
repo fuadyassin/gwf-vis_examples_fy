@@ -1,2 +1,2 @@
-vga @ git+https://github.com/gwf-vis/vga-python-lib.git
-gwfvis @ git+https://github.com/gwf-vis/gwf-vis-python-lib.git
+vga @ git+https://github.com/vga-team/python-helper.git
+gwfvis @ git+https://github.com/vga-team/gwf-vis-python-helper.git

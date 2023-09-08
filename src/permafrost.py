@@ -1,6 +1,6 @@
 # %% install
-# ! pip install git+https://github.com/gwf-vis/vga-python-lib.git
-# ! pip install git+https://github.com/gwf-vis/gwf-vis-python-lib.git
+# ! pip install git+https://github.com/vga-team/python-helper.git
+# ! pip install git+https://github.com/vga-team/gwf-vis-python-helper.git
 
 # %% import
 import vga

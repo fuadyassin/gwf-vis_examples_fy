@@ -45,10 +45,11 @@ metadata = vga.add_plugin(
 metadata = vga.add_plugin(
     config=vis_config, name=gwfvis.PluginNames.LINE_CHART, container='sidebar', props={
         'dataFor': {
+            'variableName': 'GDP',
             'dimensionName': 'time',
             'dataSource': data_source,
-            'locationLabelKey': 'ADMIN',
-        }
+        },
+        'locationLabelKey': 'ADMIN',
     })
 
 # %% option1: print the config JSON

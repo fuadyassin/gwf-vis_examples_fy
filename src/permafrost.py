@@ -24,6 +24,7 @@ permafrost_layer = vga.add_plugin(
 vga.set_plugin_props(
     permafrost_layer,
     {
+        'thresholds': 10,
         'displayName': 'Permafrost',
         'layerType': 'overlay',
         'active': True

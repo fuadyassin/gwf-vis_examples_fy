@@ -4,23 +4,23 @@
 
 # %% import
 import vga
-import gwfvis
+from gwfvis import conf as gwfvisconf
 import json
 
 # %% config
-vis_config = gwfvis.create_config()
+vis_config = gwfvisconf.create_config()
 vga.set_view(vis_config, center=[51.3, -116], zoom=10)
 
 # %% setup data provider
 data_provider_plugin = vga.add_plugin(
-    vis_config, name=gwfvis.PluginNames.SQLITE_LOCAL_DATA_PROVIDER)
+    vis_config, name=gwfvisconf.PluginNames.SQLITE_LOCAL_DATA_PROVIDER)
 data_provider_plugin = vga.add_plugin(
-    vis_config, name=gwfvis.PluginNames.GWFVISDB_DATA_PROVIDER)
+    vis_config, name=gwfvisconf.PluginNames.GWFVISDB_DATA_PROVIDER)
 
 # %% add SUMMA layer
 data_source = 'gwfvisdb:https://gwf-vis.usask.ca/v1/api/file/fetch/public/datasets/catchment.gwfvisdb'
 summa_layer = vga.add_plugin(
-    config=vis_config, name=gwfvis.PluginNames.GEOJSON_LAYER)
+    config=vis_config, name=gwfvisconf.PluginNames.GEOJSON_LAYER)
 vga.set_plugin_props(
     summa_layer,
     {
@@ -31,7 +31,7 @@ vga.set_plugin_props(
 )
 # %% add data control
 data_control = vga.add_plugin(
-    config=vis_config, name=gwfvis.PluginNames.DATA_CONTROL, container='main', props={
+    config=vis_config, name=gwfvisconf.PluginNames.DATA_CONTROL, container='main', props={
         'dataSources': [data_source],
         'dataSourceDict': {'SUMMA': data_source}
     }
@@ -39,15 +39,15 @@ data_control = vga.add_plugin(
 
 # %% add location pins
 metadata = vga.add_plugin(
-    config=vis_config, name=gwfvis.PluginNames.LOCATION_PIN, container='sidebar', container_props={'slot': 'top'})
+    config=vis_config, name=gwfvisconf.PluginNames.LOCATION_PIN, container='sidebar', container_props={'slot': 'top'})
 
 # %% add metadata
 metadata = vga.add_plugin(
-    config=vis_config, name=gwfvis.PluginNames.METADATA, container='sidebar')
+    config=vis_config, name=gwfvisconf.PluginNames.METADATA, container='sidebar')
 
 # %% add line chart
 metadata = vga.add_plugin(
-    config=vis_config, name=gwfvis.PluginNames.LINE_CHART, container='sidebar', props={
+    config=vis_config, name=gwfvisconf.PluginNames.LINE_CHART, container='sidebar', props={
         'dataFor': {
             'dimensionName': 'time',
             'dataSource': data_source
@@ -56,7 +56,7 @@ metadata = vga.add_plugin(
 
 # %% add line chart
 metadata = vga.add_plugin(
-    config=vis_config, name=gwfvis.PluginNames.LINE_CHART, container='sidebar', props={
+    config=vis_config, name=gwfvisconf.PluginNames.LINE_CHART, container='sidebar', props={
         'dataFor': {
             'variableNames': [
                 'scalarAquiferBaseflow',
@@ -71,7 +71,7 @@ metadata = vga.add_plugin(
 
 # %% add legend
 metadata = vga.add_plugin(
-    config=vis_config, name=gwfvis.PluginNames.LEGEND, container='main', container_props={'width': '20rem'})
+    config=vis_config, name=gwfvisconf.PluginNames.LEGEND, container='main', container_props={'width': '20rem'})
 
 # %% option1: print the config JSON
 print(json.dumps(vis_config))

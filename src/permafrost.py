@@ -4,23 +4,23 @@
 
 # %% import
 import vga
-import gwfvis
+from gwfvis import conf as gwfvisconf
 import json
 
 # %% config
-vis_config = gwfvis.create_config()
+vis_config = gwfvisconf.create_config()
 vga.set_view(vis_config, center=[56.4, -123.2], zoom=6)
 
 # %% setup data provider
 data_provider_plugin = vga.add_plugin(
-    vis_config, name=gwfvis.PluginNames.SQLITE_LOCAL_DATA_PROVIDER)
+    vis_config, name=gwfvisconf.PluginNames.SQLITE_LOCAL_DATA_PROVIDER)
 data_provider_plugin = vga.add_plugin(
-    vis_config, name=gwfvis.PluginNames.GWFVISDB_DATA_PROVIDER)
+    vis_config, name=gwfvisconf.PluginNames.GWFVISDB_DATA_PROVIDER)
 
 # %% add permafrost layer
 data_source = 'gwfvisdb:https://gwf-vis.usask.ca/v1/api/file/fetch/public/datasets/permafrost_reduced_fill_null.gwfvisdb'
 permafrost_layer = vga.add_plugin(
-    config=vis_config, name=gwfvis.PluginNames.CONTOUR_LAYER)
+    config=vis_config, name=gwfvisconf.PluginNames.CONTOUR_LAYER)
 vga.set_plugin_props(
     permafrost_layer,
     {
@@ -32,7 +32,7 @@ vga.set_plugin_props(
 )
 # %% add data control
 data_control = vga.add_plugin(
-    config=vis_config, name=gwfvis.PluginNames.DATA_CONTROL, container='main', props={
+    config=vis_config, name=gwfvisconf.PluginNames.DATA_CONTROL, container='main', props={
         'dataSources': [data_source],
         'dataSourceDict': {'Permafrost': data_source}
     }
@@ -40,11 +40,11 @@ data_control = vga.add_plugin(
 
 # %% add metadata
 metadata = vga.add_plugin(
-    config=vis_config, name=gwfvis.PluginNames.METADATA, container='sidebar')
+    config=vis_config, name=gwfvisconf.PluginNames.METADATA, container='sidebar')
 
 # %% add line chart
 metadata = vga.add_plugin(
-    config=vis_config, name=gwfvis.PluginNames.LINE_CHART, container='sidebar', props={
+    config=vis_config, name=gwfvisconf.PluginNames.LINE_CHART, container='sidebar', props={
         'dataFor': {
             'dimensionName': 'level',
             'dataSource': data_source
@@ -54,7 +54,7 @@ metadata = vga.add_plugin(
 
 # %% add legend
 metadata = vga.add_plugin(
-    config=vis_config, name=gwfvis.PluginNames.LEGEND, container='main', container_props={'width': '20rem'})
+    config=vis_config, name=gwfvisconf.PluginNames.LEGEND, container='main', container_props={'width': '20rem'})
 
 # %% option1: print the config JSON
 print(json.dumps(vis_config))

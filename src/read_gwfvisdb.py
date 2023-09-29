@@ -7,27 +7,29 @@ from gwfvis import db as gwfvisdb
 import json
 import urllib.request
 
-#%% download the gwfvisdb file
-gwfvisdb_url = 'https://gwf-vis.usask.ca/v1/api/file/fetch/public/datasets/mesh.new.gwfvisdb'
-gwfvisdb_path = '_.gwfvisdb'
+# %% download the gwfvisdb file
+gwfvisdb_url = (
+    "https://gwf-vis.usask.ca/v1/api/file/fetch/public/datasets/mesh.new.gwfvisdb"
+)
+gwfvisdb_path = "_.gwfvisdb"
 urllib.request.urlretrieve(gwfvisdb_url, gwfvisdb_path)
 
 # %% read the db file
 options = gwfvisdb.read_gwfvis_db(gwfvisdb_path)
 
-#%% info
+# %% info
 options.info
 
 # %% locations
 options.locations
 
-#%% dimensions
+# %% dimensions
 options.dimensions
 
-#%% variables
+# %% variables
 options.variables
 
-#%% values
+# %% values
 options.values
 
-#%%
+# %%

@@ -24,7 +24,7 @@ data_provider_plugin = vga.add_plugin(
 
 
 # %% download the gwfvisdb file
-gwfvisdb_url = "https://gwf-vis.usask.ca/v1/api/file/fetch/public/datasets/gdp.gwfvisdb"
+gwfvisdb_url = "https://gwf-vis.usask.ca/assets/datasets/gdp.gwfvisdb"
 gwfvisdb_path = "../temp/_.gwfvisdb"
 gwfvisdb_directory = os.path.dirname(gwfvisdb_path)
 if not os.path.exists(gwfvisdb_directory):

@@ -26,7 +26,7 @@ color_scheme = {
 }
 
 # %% add GDP layer
-data_source = 'gwfvisdb:https://gwf-vis.usask.ca/v1/api/file/fetch/public/datasets/gdp.gwfvisdb'
+data_source = 'gwfvisdb:https://gwf-vis.usask.ca/assets/datasets/gdp.gwfvisdb'
 gdp_layer = vga.add_plugin(
     config=vis_config, name=gwfvisconf.PluginNames.GEOJSON_LAYER)
 vga.set_plugin_props(

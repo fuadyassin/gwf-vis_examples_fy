@@ -18,7 +18,7 @@ data_provider_plugin = vga.add_plugin(
     vis_config, name=gwfvisconf.PluginNames.GWFVISDB_DATA_PROVIDER)
 
 # %% add U15 layer
-data_source = 'gwfvisdb:https://gwf-vis.usask.ca/v1/api/file/fetch/public/datasets/u15.gwfvisdb'
+data_source = 'gwfvisdb:https://gwf-vis.usask.ca/assets/datasets/u15.gwfvisdb'
 u15_layer = vga.add_plugin(
     config=vis_config, name=gwfvisconf.PluginNames.GEOJSON_LAYER)
 vga.set_plugin_props(

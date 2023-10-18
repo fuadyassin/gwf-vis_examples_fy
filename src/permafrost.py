@@ -18,7 +18,7 @@ data_provider_plugin = vga.add_plugin(
     vis_config, name=gwfvisconf.PluginNames.GWFVISDB_DATA_PROVIDER)
 
 # %% add permafrost layer
-data_source = 'gwfvisdb:https://gwf-vis.usask.ca/v1/api/file/fetch/public/datasets/permafrost_reduced_fill_null.gwfvisdb'
+data_source = 'gwfvisdb:https://gwf-vis.usask.ca/assets/datasets/permafrost_reduced_fill_null.gwfvisdb'
 permafrost_layer = vga.add_plugin(
     config=vis_config, name=gwfvisconf.PluginNames.CONTOUR_LAYER)
 vga.set_plugin_props(

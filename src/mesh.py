@@ -18,7 +18,7 @@ data_provider_plugin = vga.add_plugin(
     vis_config, name=gwfvisconf.PluginNames.GWFVISDB_DATA_PROVIDER)
 
 # %% add MESH layer
-data_source = 'gwfvisdb:https://gwf-vis.usask.ca/v1/api/file/fetch/public/datasets/mesh.new.gwfvisdb'
+data_source = 'gwfvisdb:https://gwf-vis.usask.ca/assets/datasets/mesh.new.gwfvisdb'
 mesh_layer = vga.add_plugin(
     config=vis_config, name=gwfvisconf.PluginNames.GEOJSON_LAYER)
 vga.set_plugin_props(

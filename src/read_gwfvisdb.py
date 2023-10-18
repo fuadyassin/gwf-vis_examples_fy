@@ -10,7 +10,7 @@ import urllib.request
 
 # %% download the gwfvisdb file
 gwfvisdb_url = (
-    "https://gwf-vis.usask.ca/v1/api/file/fetch/public/datasets/mesh.new.gwfvisdb"
+    "https://gwf-vis.usask.ca/assets/datasets/mesh.new.gwfvisdb"
 )
 gwfvisdb_path = "../temp/_.gwfvisdb"
 gwfvisdb_directory = os.path.dirname(gwfvisdb_path)

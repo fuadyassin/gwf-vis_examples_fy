@@ -105,4 +105,12 @@ print(json.dumps(vis_config))
 # %% option2: print the URL
 print(vga.generate_vis_url(vis_config))
 
+# %% option3: save as a config file
+config_directory = "../out"
+config_file_name = "gdp_thresholds.vgaconf"
+if not os.path.exists(config_directory):
+    os.makedirs(config_directory)
+with open(f"{config_directory}/{config_file_name}", 'w') as file:
+    file.write(json.dumps(vis_config))
+
 # %%

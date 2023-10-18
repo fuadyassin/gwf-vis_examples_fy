@@ -7,11 +7,15 @@ from gwfvis import db as gwfvisdb
 import json
 import urllib.request
 
+
 # %% download the gwfvisdb file
 gwfvisdb_url = (
     "https://gwf-vis.usask.ca/v1/api/file/fetch/public/datasets/mesh.new.gwfvisdb"
 )
-gwfvisdb_path = "_.gwfvisdb"
+gwfvisdb_path = "../temp/_.gwfvisdb"
+gwfvisdb_directory = os.path.dirname(gwfvisdb_path)
+if not os.path.exists(gwfvisdb_directory):
+    os.makedirs(gwfvisdb_directory)
 urllib.request.urlretrieve(gwfvisdb_url, gwfvisdb_path)
 
 # %% read the db file

@@ -4,7 +4,7 @@ rm -rf out
 cd src
 for f in *.py; do {
     python "$f"
-    ipynb_path="../out/$(echo "${f%.*}" | cut -d'_' -f1).ipynb"
+    ipynb_path="../out/$(echo "${f%.*}").ipynb"
     jupytext "$f" -o "$ipynb_path"
     jupyter nbconvert "$ipynb_path" --to html
 }; done

@@ -8,4 +8,4 @@ for f in *.py; do {
     jupytext "$f" -o "$ipynb_path"
     jupyter nbconvert "$ipynb_path" --to html
 }; done
-cd ../out
+cp *.py ../out/

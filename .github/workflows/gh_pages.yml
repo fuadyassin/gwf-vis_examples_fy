@@ -35,7 +35,7 @@ jobs:
       - name: Install Dependencies
         run: pip install -r requirements.txt
       - name: Build
-        run: sh run_all.sh
+        run: sh build.sh
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - name: Upload artifact

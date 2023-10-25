@@ -1,11 +1,12 @@
 # %%
-# ! pip install git+https://github.com/vga-team/python-helper.git
-# ! pip install git+https://github.com/vga-team/gwf-vis-python-helper.git
+# ! pip install git+https://github.com/vga-team/py-lib.git
+# ! pip install git+https://github.com/vga-team/gwf-vis_lib.git
 
 # %% import
 from gwfvis import db as gwfvisdb
 import json
 import urllib.request
+import os
 
 
 # %% download the gwfvisdb file

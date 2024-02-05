@@ -77,7 +77,7 @@ metadata = vga.add_plugin(
 
 
 # %% add legend
-metadata = vga.add_plugin(
+legend = vga.add_plugin(
     config=vis_config,
     name=gwfvisconf.PluginNames.LEGEND,
     container="main",

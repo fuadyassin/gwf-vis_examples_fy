@@ -2,7 +2,6 @@
 
 Click the following links to open a pregenerated GWF-Vis output.
 
- 
 - Color scheme configuration: [vis](https://vga-team.github.io/app/?configUrl=/gwf-vis_examples/color_config.vgaconf), [code](https://vga-team.github.io/gwf-vis_examples/color_config.html), [ipynb](https://vga-team.github.io/gwf-vis_examples/color_config.ipynb), [py](https://vga-team.github.io/gwf-vis_examples/color_config.py)
 - Choropleth map for GDP with custom thresholds: [vis](https://vga-team.github.io/app/?configUrl=/gwf-vis_examples/gdp_thresholds.vgaconf), [code](https://vga-team.github.io/gwf-vis_examples/gdp_thresholds.html), [ipynb](https://vga-team.github.io/gwf-vis_examples/gdp_thresholds.ipynb), [py](https://vga-team.github.io/gwf-vis_examples/gdp_thresholds.py)
 - Choropleth map for GDP: [vis](https://vga-team.github.io/app/?configUrl=/gwf-vis_examples/gdp.vgaconf), [code](https://vga-team.github.io/gwf-vis_examples/gdp.html), [ipynb](https://vga-team.github.io/gwf-vis_examples/gdp.ipynb), [py](https://vga-team.github.io/gwf-vis_examples/gdp.py)
@@ -12,3 +11,4 @@ Click the following links to open a pregenerated GWF-Vis output.
 - Visualization for a SUMMA output: [vis](https://vga-team.github.io/app/?configUrl=/gwf-vis_examples/summa.vgaconf), [code](https://vga-team.github.io/gwf-vis_examples/summa.html), [ipynb](https://vga-team.github.io/gwf-vis_examples/summa.ipynb), [py](https://vga-team.github.io/gwf-vis_examples/summa.py)
 - A set of pins on a map (U15): [vis](https://vga-team.github.io/app/?configUrl=/gwf-vis_examples/u15.vgaconf), [code](https://vga-team.github.io/gwf-vis_examples/u15.html), [ipynb](https://vga-team.github.io/gwf-vis_examples/u15.ipynb), [py](https://vga-team.github.io/gwf-vis_examples/u15.py)
 - A set of colored points on a map (Canadian weather stations): [vis](https://vga-team.github.io/app/?configUrl=/gwf-vis_examples/stations.vgaconf), [code](https://vga-team.github.io/gwf-vis_examples/stations.html), [ipynb](https://vga-team.github.io/gwf-vis_examples/stations.ipynb), [py](https://vga-team.github.io/gwf-vis_examples/stations.py)
+- Read gwfvisdb file and plot it using Python (Canadian weather stations): [vis](https://vga-team.github.io/gwf-vis_examples/stations.jpg), [code](https://vga-team.github.io/gwf-vis_examples/read_and_plot.html), [ipynb](https://vga-team.github.io/gwf-vis_examples/read_and_plot.ipynb), [py](https://vga-team.github.io/gwf-vis_examples/read_and_plot.py)

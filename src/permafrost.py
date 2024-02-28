@@ -20,39 +20,102 @@ data_provider_plugin = vga.add_plugin(
     vis_config, name=gwfvisconf.PluginNames.GWFVISDB_DATA_PROVIDER
 )
 
-# %% add permafrost layer
-data_source = "gwfvisdb:https://gwf-vis.usask.ca/assets/datasets/permafrost_reduced_fill_null.gwfvisdb"
-permafrost_layer = vga.add_plugin(
-    config=vis_config, name=gwfvisconf.PluginNames.CONTOUR_LAYER
-)
-vga.set_plugin_props(
-    permafrost_layer,
-    {
-        "thresholds": 10,
-        "displayName": "Permafrost",
+# %% define color scheme
+thresholds = [20, 60, 120, 180, 250]
+
+color_scheme = {
+    "": {
+        "type": "threshold",
+        "thresholds": thresholds,
+        "scheme": ["azure", "blue", "green", "yellow", "orange", "red"],
+    }
+}
+
+# %% add permafrost layers
+data_source = "gwfvisdb:https://gwf-vis.usask.ca/assets/datasets/permafrost-reduced-locations.gwfvisdb"
+contour_layer = vga.add_plugin(
+    config=vis_config,
+    name=gwfvisconf.PluginNames.CONTOUR_LAYER,
+    props={
+        "colorScheme": color_scheme,
+        "displayName": "Permafrost Contours",
+        "lineWeight": 1,
+        "opacity": 0.3,
         "layerType": "overlay",
         "active": True,
     },
 )
+point_layer = vga.add_plugin(
+    config=vis_config,
+    name=gwfvisconf.PluginNames.GEOJSON_LAYER,
+    props={
+        "colorScheme": color_scheme,
+        "displayName": "Permafrost Points",
+        "layerType": "overlay",
+        "pointSize": 5,
+        "active": False,
+    },
+)
+
+# %% add location pins
+metadata = vga.add_plugin(
+    config=vis_config,
+    name=gwfvisconf.PluginNames.LOCATION_PIN,
+    container="sidebar",
+    container_props={"slot": "top"},
+)
+
 # %% add data control
 data_control = vga.add_plugin(
     config=vis_config,
     name=gwfvisconf.PluginNames.DATA_CONTROL,
-    container="main",
+    container="sidebar",
     props={"dataSources": [data_source], "dataSourceDict": {"Permafrost": data_source}},
+    container_props={"slot": "top"},
 )
 
-# %% add metadata
-metadata = vga.add_plugin(
-    config=vis_config, name=gwfvisconf.PluginNames.METADATA, container="sidebar"
-)
-
-# %% add line chart
-metadata = vga.add_plugin(
+# %% add line charts
+line_chart_cycle = vga.add_plugin(
     config=vis_config,
     name=gwfvisconf.PluginNames.LINE_CHART,
     container="sidebar",
-    props={"dataFor": {"dimensionName": "level", "dataSource": data_source}},
+    props={
+        "header": "cycle",
+        "dataFor": {
+            "dimensionName": "cycle",
+            "dataSource": data_source,
+            "variableNames": ["TSOL_MIN", "TSOL_MAX"],
+        },
+    },
+)
+
+line_chart_gru = vga.add_plugin(
+    config=vis_config,
+    name=gwfvisconf.PluginNames.LINE_CHART,
+    container="sidebar",
+    props={
+        "header": "gru",
+        "dataFor": {
+            "dimensionName": "gru",
+            "dataSource": data_source,
+            "variableNames": ["TSOL_MIN", "TSOL_MAX"],
+        },
+    },
+)
+
+line_chart_level = vga.add_plugin(
+    config=vis_config,
+    name=gwfvisconf.PluginNames.LINE_CHART,
+    container="main",
+    props={
+        "header": "level",
+        "dataFor": {
+            "dimensionName": "level",
+            "dataSource": data_source,
+            "variableNames": ["TSOL_MIN", "TSOL_MAX"],
+        },
+    },
+    container_props={"width": "100vw"},
 )
 
 
@@ -62,6 +125,9 @@ legend = vga.add_plugin(
     name=gwfvisconf.PluginNames.LEGEND,
     container="main",
     container_props={"width": "20rem"},
+    props={
+        "colorScheme": color_scheme,
+    },
 )
 
 # %% option1: print the config JSON
@@ -75,7 +141,7 @@ config_directory = "../out"
 config_file_name = "permafrost.vgaconf"
 if not os.path.exists(config_directory):
     os.makedirs(config_directory)
-with open(f"{config_directory}/{config_file_name}", 'w') as file:
+with open(f"{config_directory}/{config_file_name}", "w") as file:
     file.write(json.dumps(vis_config))
 
 # %%

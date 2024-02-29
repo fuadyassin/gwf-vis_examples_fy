@@ -40,6 +40,7 @@ def generate_figure():
                 lat_0=45, lon_0=-100)
     m.etopo(scale=0.5, alpha=0.5)
     m.scatter(xs, ys, latlon=True, alpha=0.5)
+    fig.tight_layout(pad=0)
 
     return fig
 
@@ -51,4 +52,5 @@ out_file_name = "stations.jpg"
 if not os.path.exists(out_directory):
     os.makedirs(out_directory)
 generate_figure().savefig(f'{out_directory}/{out_file_name}')
+
 # %%

@@ -21,7 +21,8 @@ color_scheme = {
     },
 }
 
-# %% define data source dict
+# %% define data source
+data_source = "gwfvisdb:https://gwf-vis.usask.ca/assets/datasets/gloric.gwfvisdb"
 data_source_dict = {"GLORIC": data_source}
 
 # %% setup data provider
@@ -33,7 +34,6 @@ data_provider_plugin = vga.add_plugin(
 )
 
 # %% add GLORIC layer
-data_source = "gwfvisdb:https://gwf-vis.usask.ca/assets/datasets/gloric.gwfvisdb"
 gloric_layer = vga.add_plugin(
     config=vis_config, name=gwfvisconf.PluginNames.GEOJSON_LAYER
 )

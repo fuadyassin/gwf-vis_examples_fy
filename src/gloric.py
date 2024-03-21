@@ -15,9 +15,15 @@ vga.set_prefer_canvas(vis_config, True)
 
 # %% define color scheme
 color_scheme = {
-    "": {
-        "type": "quantile",
-        "scheme": ["blue", "green", "yellow", "red"],
+    "gwfvisdb:https://gwf-vis.usask.ca/assets/datasets/gloric.gwfvisdb": {
+        "": {
+            "type": "quantile",
+            "scheme": "schemeGnBu[9]",
+        },
+        "Temp_av": {
+            "type": "quantile",
+            "scheme": "schemeOrRd[9]",
+        },
     },
 }
 
@@ -58,14 +64,6 @@ data_control = vga.add_plugin(
         "enableSecondaryVariable": True,
         "enableTertiaryVariable": True,
     },
-)
-
-# %% add location pins
-metadata = vga.add_plugin(
-    config=vis_config,
-    name=gwfvisconf.PluginNames.LOCATION_PIN,
-    container="sidebar",
-    container_props={"slot": "top"},
 )
 
 # %% add metadata

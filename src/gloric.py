@@ -63,6 +63,24 @@ data_control = vga.add_plugin(
         "dataSourceDict": data_source_dict,
         "enableSecondaryVariable": True,
         "enableTertiaryVariable": True,
+        "primaryVariableLabel": "Variable (Fill)",
+        "secondaryVariableLabel": "Variable (Stroke)",
+        "tertiaryVariableLabel": "Variable (Stroke Weight)",
+    },
+)
+
+# %% add markdown
+iframe_src = (
+    "https://gwf-vis.usask.ca"
+)
+markdown = vga.add_plugin(
+    config=vis_config,
+    name=gwfvisconf.PluginNames.MARKDOWN,
+    container="sidebar",
+    container_props={"slot": "top"},
+    props={
+        "header": "Info",
+        "markdown": f'<iframe src="{iframe_src}" style="height: 100%; width: 100%; min-height: 500px;" />',
     },
 )
 

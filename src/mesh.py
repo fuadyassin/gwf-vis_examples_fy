@@ -37,7 +37,7 @@ data_control = vga.add_plugin(
 )
 
 # %% add location pins
-metadata = vga.add_plugin(
+location_pin = vga.add_plugin(
     config=vis_config,
     name=gwfvisconf.PluginNames.LOCATION_PIN,
     container="sidebar",
@@ -50,19 +50,23 @@ metadata = vga.add_plugin(
 )
 
 # %% add line chart
-metadata = vga.add_plugin(
-    config=vis_config,
-    name=gwfvisconf.PluginNames.LINE_CHART,
-    container="sidebar",
-    props={"dataFor": {"dimensionName": "time", "dataSource": data_source}},
-)
-
-# %% add line chart
-metadata = vga.add_plugin(
+line_chart = vga.add_plugin(
     config=vis_config,
     name=gwfvisconf.PluginNames.LINE_CHART,
     container="sidebar",
     props={
+        "header": "Selected Variable", 
+        "dataFor": {"dimensionName": "time", "dataSource": data_source}
+    },
+)
+
+# %% add line chart
+fixed_variable_line_chart = vga.add_plugin(
+    config=vis_config,
+    name=gwfvisconf.PluginNames.LINE_CHART,
+    container="sidebar",
+    props={
+        "header": "STGW and SNO",
         "dataFor": {
             "variableNames": [
                 "STGW",

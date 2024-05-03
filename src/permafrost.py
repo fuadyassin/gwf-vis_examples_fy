@@ -11,6 +11,7 @@ import os
 # %% config
 vis_config = gwfvisconf.create_config()
 vga.set_view(vis_config, center=[56.4, -123.2], zoom=6)
+vga.set_page_title(vis_config, "GWF-VIS Permafrost")
 
 # %% setup data provider
 data_provider_plugin = vga.add_plugin(

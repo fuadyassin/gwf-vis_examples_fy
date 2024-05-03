@@ -12,6 +12,7 @@ import os
 vis_config = gwfvisconf.create_config()
 vga.set_view(vis_config, center=[51.5, -107], zoom=7)
 vga.set_prefer_canvas(vis_config, True)
+vga.set_page_title(vis_config, "GWF-VIS GloRiC")
 
 # %% define color scheme
 color_scheme = {

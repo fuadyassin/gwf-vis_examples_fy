@@ -11,6 +11,7 @@ import os
 # %% config
 vis_config = gwfvisconf.create_config()
 vga.set_view(vis_config, center=[51.3, -113], zoom=4)
+vga.set_page_title(vis_config, "GWF-VIS GDP Weather Stations")
 
 # %% setup data provider
 data_provider_plugin = vga.add_plugin(

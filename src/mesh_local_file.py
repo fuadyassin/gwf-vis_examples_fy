@@ -11,6 +11,7 @@ import os
 # %% config
 vis_config = gwfvisconf.create_config()
 vga.set_view(vis_config, center=[51.3, -116], zoom=10)
+vga.set_page_title(vis_config, "GWF-VIS MESH (local)")
 
 # REQUEST LOCAL FILE ACCESS PERMISSION
 vga.set_access_local_files(vis_config, True)

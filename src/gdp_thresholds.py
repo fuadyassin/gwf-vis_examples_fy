@@ -13,6 +13,7 @@ import numpy as np
 # %% config
 vis_config = gwfvisconf.create_config()
 vga.set_view(vis_config, center=[0, 0], zoom=2)
+vga.set_page_title(vis_config, "GWF-VIS GDP (thresholds)")
 
 # %% setup data provider
 data_provider_plugin = vga.add_plugin(
@@ -110,7 +111,7 @@ config_directory = "../out"
 config_file_name = "gdp_thresholds.vgaconf"
 if not os.path.exists(config_directory):
     os.makedirs(config_directory)
-with open(f"{config_directory}/{config_file_name}", 'w') as file:
+with open(f"{config_directory}/{config_file_name}", "w") as file:
     file.write(json.dumps(vis_config))
 
 # %%

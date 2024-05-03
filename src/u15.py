@@ -11,6 +11,7 @@ import os
 # %% config
 vis_config = gwfvisconf.create_config()
 vga.set_view(vis_config, center=[51, -115], zoom=5)
+vga.set_page_title(vis_config, "GWF-VIS U15")
 
 # %% setup data provider
 data_provider_plugin = vga.add_plugin(

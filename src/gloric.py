@@ -39,6 +39,20 @@ data_provider_plugin = vga.add_plugin(
     vis_config, name=gwfvisconf.PluginNames.GWFVISDB_DATA_PROVIDER
 )
 
+#%%
+tile_layer = vga.add_plugin(
+    config=vis_config, name=gwfvisconf.PluginNames.TILE_LAYER
+)
+vga.set_plugin_props(
+    tile_layer,
+    {
+        "displayName": "Street",
+        "layerType": "base-layer",
+        "active": True,
+        "urlTemplate": "https://server.arcgisonline.com/arcgis/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}"
+    },
+)
+
 # %% add GLORIC layer
 gloric_layer = vga.add_plugin(
     config=vis_config, name=gwfvisconf.PluginNames.GEOJSON_LAYER

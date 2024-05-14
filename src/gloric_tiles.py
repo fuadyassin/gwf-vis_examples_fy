@@ -109,9 +109,10 @@ vga.set_plugin_props(
     {
         "displayName": "Vector",
         "type": "overlay",
-        "active": False,
+        "active": True,
         "metadataStateKey": "gwf-default.metadata",
         "style": gl_layer_style,
+        "eventLayerId": "overlay"
     },
 )
 

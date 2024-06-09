@@ -25,8 +25,8 @@ data_provider_plugin = vga.add_plugin(
 color_scheme = {
     "": {  # '' is for default (any variables that is not defined here)
         # here we use a quantize scale for custom array of colors
-        "type": "quantize",
-        "scheme": ["blue", "green", "yellow", "red"],
+        "type": "sequential",
+        "scheme": "schemeYlGnBu[9]",
     },
     "scalarCanopyWat": {  # color definition for scalarCanopyWat only
         # here we use a quantile scale for custom array of colors
@@ -36,7 +36,7 @@ color_scheme = {
     "scalarSWE": {  # color definition for scalarSWE only
         # here we use a sequential scale for custom array of colors
         "type": "sequential",
-        "scheme": ["blue", "green", "yellow", "red"],
+        "scheme": "schemeYlGnBu[9]",
     },
     "scalarTotalIET": {  # color definition for scalarTotalIET only
         # here we use a quantize scale for builtin color scheme, the builtin scheme names can be found at https://github.com/d3/d3-scale-chromatic
@@ -48,7 +48,7 @@ color_scheme = {
         # here we use a sequential scale for builtin color scheme, the builtin scheme names can be found at https://github.com/d3/d3-scale-chromatic
         "type": "sequential",
         # use a single string instead of an array means to use the built in scheme, note that for sequntial, you have to use interpolate colors
-        "scheme": "interpolateOranges",
+        "scheme": "schemeYlGnBu[9]",
     },
 }
 

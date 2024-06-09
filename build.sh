@@ -1,4 +1,11 @@
-python -m pip install -r requirements.txt
+module load StdEnv/2020
+#module load gcc/9.3.0
+
+source /home/fuaday/.venv/bin/activate
+
+# Install requirements using the Python interpreter from the virtual environment
+#python -m pip install -r /home/fuaday/github-repos/gwf-vis_examples_fy/requirements.txt
+python -m pip install -r /home/fuaday/github-repos/gwf-vis_examples_fy/requirements.txt
 python -m pip install jupytext nbconvert
 rm -rf out
 cd src
